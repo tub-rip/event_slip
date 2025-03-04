@@ -14,7 +14,7 @@ If you use this work in your research, please cite it as follows:
 
 ```bibtex
 @Article{Reinold25wacvw,
-  author        = {Thilo Reinold and Suman Ghosh and and Guillermo Gallego},
+  author        = {Thilo Reinold and Suman Ghosh and Guillermo Gallego},
   title         = {Combined Physics and Event Camera Simulator for Slip Detection},
   journal       = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops},
   year          = 2025
@@ -24,3 +24,10 @@ If you use this work in your research, please cite it as follows:
 ## Code
 
 Code will be released soon.
+
+## Additional Resources
+
+* [Research page (TU Berlin RIP lab)](https://sites.google.com/view/guillermogallego/research/event-based-vision)
+* [Course at TU Berlin](https://sites.google.com/view/guillermogallego/teaching/event-based-robot-vision)
+* [Survey paper](http://rpg.ifi.uzh.ch/docs/EventVisionSurvey.pdf)
+* [List of Resources](https://github.com/uzh-rpg/event-based_vision_resources)
