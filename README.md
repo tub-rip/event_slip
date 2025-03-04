@@ -10,4 +10,4 @@ Official repository for [**EVGEN: Combined Physics and Event Camera Simulator fo
 [Video](https://youtu.be/U4eAC0ao2R8)
 </h2>
 
-[![EVGEN: Combined Physics and Event Camera Simulator for Slip Detection](evgen_thumbnail.jpeg)](https://youtu.be/U4eAC0ao2R8)
+[![EVGEN: Combined Physics and Event Camera Simulator for Slip Detection](evgen_thumbnail.jpg)](https://youtu.be/U4eAC0ao2R8)
