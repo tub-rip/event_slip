@@ -14,10 +14,12 @@ If you use this work in your research, please cite it as follows:
 
 ```bibtex
 @InProceedings{Reinold25wacvw,
-  author        = {Thilo Reinold and Suman Ghosh and Guillermo Gallego},
-  title         = {Combined Physics and Event Camera Simulator for Slip Detection},
-  booktitle     = {{IEEE/CVF} Winter Conf. Applications of Computer Vision (WACV) Workshops},
-  year          = 2025
+  author    = {Thilo Reinold and Suman Ghosh and Guillermo Gallego},
+  title     = {Combined Physics and Event Camera Simulator for Slip Detection},
+  booktitle = {{IEEE/CVF} Winter Conf. Applications of Computer Vision (WACV) Workshops},
+  month     = {Feb.},
+  year      = {2025},
+  pages     = {935--943}
 }
 ```
 
