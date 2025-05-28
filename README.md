@@ -1,6 +1,6 @@
 # Combined Physics and Event Camera Simulator for Slip Detection
 
-Official repository for [**Combined Physics and Event Camera Simulator for Slip Detection**](WACV_2025_paper.pdf), by Thilo Reinold, [Suman Ghosh](https://www.linkedin.com/in/suman-ghosh-a8762576/) and [Guillermo Gallego](http://www.guillermogallego.es), published at the IEEE/CVF Winter Conference on Applications of Computer Vision **(WACV)** Workshops 2025, Tucson, USA.
+Official repository for [**Combined Physics and Event Camera Simulator for Slip Detection**](http://doi.org/10.1109/WACVW65960.2025.00104), by Thilo Reinold, [Suman Ghosh](https://www.linkedin.com/in/suman-ghosh-a8762576/) and [Guillermo Gallego](http://www.guillermogallego.es), published at the IEEE/CVF Winter Conference on Applications of Computer Vision **(WACV)** Workshops 2025, Tucson, USA.
 <h2 align="left">
   
 [Paper](https://arxiv.org/pdf/2503.04838) | [Video](https://youtu.be/U4eAC0ao2R8) | [Poster](250226_WACV_EVGEN_poster.pdf)
@@ -19,7 +19,8 @@ If you use this work in your research, please cite it as follows:
   booktitle = {{IEEE/CVF} Winter Conf. Applications of Computer Vision (WACV) Workshops},
   month     = {Feb.},
   year      = {2025},
-  pages     = {935--943}
+  pages     = {872--880},
+  doi       = {10.1109/WACVW65960.2025.00104}
 }
 ```
 
