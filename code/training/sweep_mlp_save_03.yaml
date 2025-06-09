@@ -1,0 +1,19 @@
+program: sweeper2.0.py
+method: random
+name: sweepmania_mlp_save_03
+project: data001_train_randComb_huge1000_v2e_thres15_final_adClearSep0.1-1.0_size2x7221_mlp
+parameters:
+    batch_size: 
+        values: [256]
+    hidden_size: 
+        values: [32]
+    lr: 
+        values: [0.00005]
+    optimizer: 
+        values: [Adam, RMSprop]
+    epochs: 
+        values: [500]
+    repetition: 
+        values: [01, 02]
+    nn:
+        value: mlp

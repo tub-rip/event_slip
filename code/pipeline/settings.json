@@ -1,0 +1,130 @@
+{
+    "general": {
+    },
+    "isaac_sim": {
+        "autorun": true,
+        "mounted_cam": {
+            "mount": "side_view",
+            "front_view": {
+                "clipping_range": [
+                    0.1,
+                    100000.0
+                ],
+                "rotation": [
+                    180,
+                    0,
+                    0
+                ],
+                "position": [
+                    0.27,
+                    0.0,
+                    0.13
+                ]
+            },
+            "side_view": {
+                "clipping_range": [
+                    0.1,
+                    100000.0
+                ],
+                "rotation": [
+                    180,
+                    0,
+                    90
+                ],
+                "position": [
+                    0.0,
+                    0.27,
+                    0.13
+                ]
+            },
+            "frames": {
+                "resolution": [
+                    1730,
+                    1300
+                ]
+            }
+        },
+        "environment_config": {
+            "table": {
+                "texture_path": "/isaac-sim/textures/ice-hockey-texture-free.jpg",
+                "texture_scale": [0.01, 0.01],
+                "orientation": [0.0,0.0,0.0],
+                "position": [0,0,-0.667],
+                "scale": [1.0,1.5,1.0]
+            },
+            "dome_light": {
+                "texture_path": "/isaac-sim/textures/heavy-snowfall-texture.jpg",
+                "intensity": 1e4,
+                "intensity_range": [1.5e2,1.5e4],
+                "orientation": [0.0,0.0,-90.0]
+            },
+            "sphere_light": {
+                "intensity": 5e6,
+                "intensity_range": [3.5e6,5.5e6],
+                "position": [22.943902739746587, -28.546648846965038, 10.132431429677615],
+                "position_range_phi": [0, 360],
+                "position_range_theta": [0, 90],
+                "position_range_r": [20, 40],
+                "position_steps": 5
+            }
+        },
+        "cube_config": {
+            "mass": 0.01,
+            "mass_range": [0.01, 0.085],
+            "mass_steps": 5,
+            "height_scale": 0.1,
+            "height_scale_range": [0.06, 0.11],
+            "height_scale_steps": 2,
+            "depth_scale": 0.05,
+            "depth_scale_range": [0.04, 0.06],
+            "depth_scale_steps": 2,
+            "width_scale": 0.05,
+            "width_scale_range": [0.03, 0.07],
+            "width_scale_steps": 3,
+            "position_relative": [0.46081576, 0.00553005, 0.058],
+            "color": [0, 0, 1],
+            "texture_path": "/isaac-sim/textures/free-wood-texture-with-high-resolution.jpg",
+            "texture_scale": [1,1]
+        },
+        "pick_place_config": {
+            "pick_grip_translation": 0.7,
+            "pick_grip_translation_range": [-0.8, 0.8],
+            "pick_grip_translation_steps": 5,
+            "gripping_depth": 0.015,
+            "gripping_depth_range": [-0.0045, 0.015],
+            "gripping_depth_steps": 2,
+            "goal_coord_x": 0.18,
+            "goal_coord_x_range": [[-1.8, -0.55],[0.18, 0.55]],
+            "goal_coord_x_steps": 2,
+            "goal_coord_y": -0.55,
+            "goal_coord_y_range": [[-1.8, -0.55], [0.55, 1.8]],
+            "goal_coord_y_steps": 2
+        }
+    },
+    "event_sim": {
+        "simulator": "v2e",
+        "v2e": {
+            "arguments": {
+                "input_frame_rate": 60,
+                "overwrite": true,
+                "timestamp_resolution": 0.0005,
+                "auto_timestamp_resolution": true,
+                "dvs_exposure": "duration 0.005",
+                "pos_thres": 0.15,
+                "neg_thres": 0.15,
+                "sigma_thres": 0.03,
+                "dvs_aedat2": "None",
+                "dvs_text": "events_v2e",
+                "output_width": 346,
+                "output_height": 260,
+                "cutoff_hz": 15,
+                "no_preview": true,
+                "skip_video_output": true,
+                "vid_slomo": "None",
+                "vid_orig": "None",
+                "dvs_vid": "DVS_VID"
+            }
+        }
+    },
+    "sam_mask": {}
+}

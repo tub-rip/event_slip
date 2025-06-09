@@ -1,0 +1,21 @@
+program: sweeper2.0.py
+method: random
+name: sweepmania_snn_save_04
+project: data001_train_randComb_huge1000_v2e_thres15_final_adClearSep0.1-1.0_size2x7221_snn
+parameters:
+    batch_size: 
+        values: [2048]
+    hidden_size:
+        values: [32]
+    lr: 
+        values: [0.003]
+    optimizer: 
+        values: [Adam, RMSprop]
+    epochs: 
+        values: [400]
+    repetition: 
+        values: [01, 02]
+    loss:
+        values: [NumSpikes, WeightedNumSpikes]
+    nn:
+        value: snn

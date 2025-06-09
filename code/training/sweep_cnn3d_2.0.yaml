@@ -1,0 +1,17 @@
+program: sweeper2.0.py
+method: random
+name: sweepmania_cnn3dx
+project: data001_train_randComb_huge1000_v2e_thres15_final_adClearSep0.1-1.0_size2x7221_cnn3d
+parameters:
+    batch_size: 
+        values: [16,32,64,128,256,512,1024]
+    lr: 
+        values: [0.0001,0.0005,0.001,0.0015,0.002,0.005,0.01,0.02,0.05]
+    optimizer: 
+        values: [Adam, RMSprop]
+    epochs: 
+        values: [400]
+    repetition: 
+        values: [01, 02]
+    nn:
+        value: cnn3d

@@ -1,0 +1,107 @@
+import torch
+from torch import nn
+from torchvision import models
+from torchvision.models.feature_extraction import create_feature_extractor
+
+class Consensus(nn.Module):
+    def __init__(self, dim) -> None:
+        super().__init__()
+        self.dim = 1
+
+    def forward(self, x):
+        return x.mean(dim=self.dim, keepdim=True)
+
+
+class Tsn(nn.Module):
+    def __init__(self, device, num_classes, model_path = None,
+                 backbone_weights = None) -> None:
+        super().__init__()
+
+        backbone = models.resnet18(weights=backbone_weights)
+        
+        backbone = backbone.to(device)
+        if model_path is not None:
+            # it is necessary to exchange last layer to load weights
+            num_ftrs = backbone.fc.in_features
+            backbone.fc = nn.Linear(num_ftrs, 2)
+            backbone.load_state_dict(torch.load(model_path))
+        backbone = backbone.to("cpu")
+
+        self.backbone = create_feature_extractor(backbone, return_nodes={
+            "layer4.1.relu_1" : "features"
+        })
+
+        # Dry run to get number of channels
+        with torch.no_grad():
+            inp = torch.randn(6, 3, 224, 224)
+            out = self.backbone(inp)["features"]
+        in_channels = out.shape[1]
+
+        self.num_classes = num_classes
+        self.in_channels = in_channels
+        
+        self.avg_pool = nn.AdaptiveAvgPool2d((1, 1))
+        self.consensus = Consensus(dim = 1)
+        self.dropout = nn.Dropout(p=0.4)  # TODO: make optional
+        self.fc_cls = nn.Linear(self.in_channels, self.num_classes)
+        nn.init.xavier_uniform_(self.fc_cls.weight)
+
+    def forward(self, x):
+        # B x N x C x H x W -> B * N x C x H x W
+        num_segs = x.shape[1]
+        x = x.reshape((-1,) + x.shape[2:])
+        x = self.backbone(x)["features"]
+        # here we want feature map
+        # e.g. (48 x 2048 x 7 x 7)
+        x = self.avg_pool(x)
+        x = x.reshape((-1, num_segs) + x.shape[1:])
+        x = self.consensus(x)
+        x = x.squeeze(1)
+        x = self.dropout(x)
+        x = x.view(x.size(0), -1)
+        # [N, in_channels]
+        cls_score = self.fc_cls(x)
+        # [N, num_classes]
+        return cls_score
+
+
+class TsnDebug(nn.Module):
+    def __init__(self, device, num_classes, model_path = None) -> None:
+        """Only for Debugging. Try if tsn model with one sample behaves like
+        the resnet
+        """
+        super().__init__()
+
+        self.backbone = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+        num_ftrs = self.backbone.fc.in_features
+        self.backbone.fc = nn.Linear(num_ftrs, self.num_classes)
+
+        if model_path is not None:
+            self.backbone = self.backbone.to(device)
+            self.backbone.load_state_dict(torch.load(model_path))
+            self.backbone = self.backbone.to("cpu")
+        
+
+    def forward(self, x):
+        return self.backbone(x)
+
+
+
+
+
+
+
+
+
+
+
+Message Friedhelm Hamann, Suman Ghosh
+
+
+
+
+
+
+
+
+

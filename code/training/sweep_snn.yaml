@@ -1,0 +1,21 @@
+program: sweeper.py
+method: random
+name: sweepmania_snn
+project: data064_2textures_big_v2e_thres15_adClearSep0.1-1.0_size2x574_01
+parameters:
+    batch_size: 
+        values: [8,16,32,64,96,128,160,256,512]
+    hidden_size:
+        values: [32]
+    lr: 
+        values: [0.001,0.002,0.003,0.004,0.005,0.006,0.007,0.008,0.009,0.010,0.011,0.012,0.013,0.014]
+    optimizer: 
+        values: [Adam, RMSprop]
+    epochs: 
+        values: [600]
+    repetition: 
+        values: [01, 02, 03]
+    loss:
+        values: [NumSpikes, WeightedNumSpikes]
+    nn:
+        value: snn
